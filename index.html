@@ -18,18 +18,18 @@
 
         /* Sekcja Hero z grafiką 4K */
         .hero {
-            position: relative;
-            width: 100%;
-            min-height: 100vh;
-            background-image: url('dc_Landing_Page.jpg');
-            background-size: contain; /* Zachowuje proporcje Twojego projektu 3840x2660 */
-            background-repeat: no-repeat;
-            background-position: center top;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Zapewnia wysokość na cały ekran */
+    background-image: url('dc_Landing_Page.jpg');
+    background-size: cover; /* ROZWIĄZANIE: Rozciąga grafikę na całą szerokość i wysokość */
+    background-repeat: no-repeat;
+    background-position: center top; /* Trzyma środek grafiki (logo) w centrum */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
         /* Kontener z tekstem - odwzorowanie Twoich linii z Photoshopa */
         .text-container {
             position: absolute;
