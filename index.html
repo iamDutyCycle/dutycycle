@@ -5,55 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duty Cycle | Electronic Music</title>
     <style>
-        /* Prosty, surowy design w klimacie IDM */
-        body { 
-            background-color: #eeeeee; 
-            color: #e0e0e0; 
-            font-family: 'Courier New', Courier, monospace; 
-            line-height: 1.6; 
-            margin: 0; 
-            padding: 20px;
+        /* Ustawienia globalne */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f5f3f0; /* Twój kolor docelowy */
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: hidden;
         }
-        .container { max-width: 800px; margin: 0 auto; }
-        header { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
-        h1 { color: #00ff00; letter-spacing: 2px; text-transform: uppercase; }
-        .bio { margin-bottom: 40px; text-align: justify; }
-        .links { list-style: none; padding: 0; }
-        .links li { margin-bottom: 10px; }
-        .links a { color: #00ff00; text-decoration: none; border: 1px solid #00ff00; padding: 5px 10px; display: inline-block; transition: 0.3s; }
-        .links a:hover { background: #00ff00; color: #000; }
-        footer { margin-top: 50px; font-size: 0.8rem; color: #666; border-top: 1px solid #333; padding-top: 10px; }
-        
-        /* Responsywność */
-        @media (max-width: 600px) {
-            body { padding: 15px; }
-            h1 { font-size: 1.5rem; }
+
+        /* Sekcja Hero z grafiką 4K */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background-image: url('dc_Landing_Page.jpg');
+            background-size: contain; /* Zachowuje proporcje Twojego projektu 3840x2660 */
+            background-repeat: no-repeat;
+            background-position: center top;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Kontener z tekstem - odwzorowanie Twoich linii z Photoshopa */
+        .text-container {
+            position: absolute;
+            bottom: 5%; /* Dopasuj tę wartość, by "siedziała" idealnie na pasie */
+            width: 50%; /* Środkowa sekcja między Twoimi liniami pomocniczymi */
+            max-width: 1200px;
+            padding: 20px;
+            background: rgba(245, 243, 240, 0.85); /* Lekka przezroczystość Twojego koloru */
+            color: #1a1a1a;
+            text-align: justify;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            border: 1px solid #ccc;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .bio-header {
+            color: #000;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+            border-bottom: 2px solid #00ff00; /* Akcent w Twoim stylu */
+            width: fit-content;
+        }
+
+        /* Stylizacja linków wewnątrz kontenera */
+        .nav-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 20px;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+
+        .nav-links a:hover {
+            border-bottom: 1px solid #00ff00;
+        }
+
+        /* Responsywność dla telefonów */
+        @media (max-width: 1024px) {
+            .text-container { width: 85%; bottom: 2%; font-size: 0.8rem; }
+            .hero { background-size: cover; } /* Na mobile lepiej wypełnić ekran */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Duty Cycle_</h1>
-            <p>IDM / Ambient / Downtempo / Instrumental</p>
-        </header>
 
-        <section class="bio">
-            <p><strong>Duty Cycle</strong> (born Max L. Patyk; 1982) is a Polish musician and producer from Silesia. A pioneer of an eclectic approach to contemporary electronic music, merging tracker techniques with analog synthesis and electric guitar.</p>
-            <p>The project represents a synthesis of downtempo and atmospheric soundscapes. In the world of Duty Cycle, the principle is simple: <em>“The soul sings, the fingers play, the machine processes.”</em></p>
-        </section>
-
-        <nav>
-            <ul class="links">
-                <li><a href="https://www.junodownload.com/" target="_blank">JUNO DOWNLOAD</a></li>
-                <li><a href="https://soundcloud.com/" target="_blank">SOUNDCLOUD</a></li>
-                <li><a href="https://instagram.com/" target="_blank">INSTAGRAM</a></li>
-            </ul>
-        </nav>
-
-        <footer>
-            &copy; 2024 Sonistep Recordings | Powered by Cold Digital Code
-        </footer>
+    <div class="hero">
+        <!-- Kontener z tekstem pozycjonowany według Twojego projektu -->
+        <div class="text-container">
+            <span class="bio-header">Duty Cycle // Profile</span>
+            <p>
+                <strong>Duty Cycle</strong> (właśc. Max L. Patyk; ur. 1982 r.) – polski muzyk, kompozytor i producent muzyczny pochodzący ze Śląska. 
+                Pionier eklektycznego podejścia do współczesnej elektroniki, znany z fuzji technik trackerskich, syntezy analogowej oraz instrumentalistyki gitarowej. 
+                W świecie Duty Cycle zasada jest prosta: <strong>„Dusza śpiewa, palce grają, maszyna przetwarza”</strong>. 
+                To muzyka skierowana do słuchaczy, którzy w zimnym, cyfrowym kodzie poszukują ciepła ludzkich wspomnień i autentycznych emocji.
+            </p>
+            
+            <div class="nav-links">
+                <a href="#">SOUNDCLOUD</a>
+                <a href="#">JUNO DOWNLOAD</a>
+                <a href="exclusive/">EXCLUSIVE_NFC</a>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>
