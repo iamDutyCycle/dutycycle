@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duty Cycle | Electronic Music</title>
@@ -64,24 +66,26 @@
         }
 
         /* Stylizacja linków wewnątrz kontenera */
-        .nav-links {
-            margin-top: 15px;
-            display: flex;
-            gap: 20px;
-            font-weight: bold;
-        }
+    .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Odstęp między ikoną a tekstem */
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
 
-        .nav-links a {
-            color: #000;
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-        }
+.nav-links a i {
+    font-size: 1.2rem; /* Wielkość samej ikony */
+}
 
-        .nav-links a:hover {
-            border-bottom: 1px solid #1f1e1b;
-        }
-
-        /* Responsywność dla telefonów */
+.nav-links a:hover {
+    color: #000;
+    transform: translateY(-2px); /* Delikatne uniesienie przy najechaniu */
+}
+        
+              /* Responsywność dla telefonów */
         
 @media (max-width: 768px) {
     .hero {
@@ -169,13 +173,17 @@
             “The soul sings, the fingers play, the machine processes.” This is music for those 
             who seek the warmth of human memories and authentic emotions within cold, digital code.
         </p>
-        
-        <div class="nav-links" style="margin-top: 30px; border-top: 2px solid #000; padding-top: 20px;">
-            <a href="https://soundcloud.com/" target="_blank">SOUNDCLOUD</a>
-            <a href="https://www.junodownload.com/" target="_blank">JUNO DOWNLOAD</a>
-            <a href="exclusive/" style="color: #d40000;">[ EXCLUSIVE_NFC_ZONE ]</a>
-        </div>
-    </div>
+
+<div class="nav-links" style="margin-top: 30px; border-top: 2px solid #333; padding-top: 20px;">
+    <a href="https://facebook.com/TwojProfil" target="_blank"><i class="fab fa-facebook"></i> FB</a>
+    <a href="https://instagram.com/TwojProfil" target="_blank"><i class="fab fa-instagram"></i> INSTA</a>
+    <a href="https://twitter.com/TwojProfil" target="_blank"><i class="fab fa-x-twitter"></i> X</a>
+    <a href="https://soundcloud.com/TwojProfil" target="_blank"><i class="fab fa-soundcloud"></i> SOUNDCLOUD</a>
+    <a href="exclusive/" style="color: #d40000; font-weight: bold;"><i class="fas fa-id-badge"></i> [ EXCLUSIVE_NFC_ZONE ]</a>
+</div>
+
+ 
+          </div>
 </div>
 
 </body>
