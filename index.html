@@ -82,10 +82,37 @@
         }
 
         /* Responsywność dla telefonów */
-        @media (max-width: 1024px) {
-            .text-container { width: 85%; bottom: 2%; font-size: 0.8rem; }
-            .hero { background-size: cover; } /* Na mobile lepiej wypełnić ekran */
-        }
+        
+@media (max-width: 768px) {
+    .hero {
+        /* Grafika zajmuje 100% szerokości ekranu, wysokość dopasowuje się automatycznie */
+        background-size: 100% auto; 
+        background-position: center top;
+        /* Ważne: tło strony pod grafiką musi być spójne */
+        background-color: #f5f3f0; 
+        min-height: auto; 
+    }
+
+    .text-container {
+        /* Margines na mobile musi być mniejszy, wyliczany w proporcji do szerokości ekranu */
+        /* Przy proporcjach Twojej grafiki, ok. 65-70% szerokości ekranu to punkt pod logo */
+        margin-top: 65vw; 
+        width: 88%;
+        padding: 20px;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        /* Usuwamy absolute, żeby tekst naturalnie "pchał" stronę w dół */
+        position: relative;
+        left: auto;
+        transform: none;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: none; /* Na mobile lżejszy wygląd lepiej siada */
+        border: none;
+        border-top: 2px solid #00ff00;
+    }
+
+        
     </style>
 </head>
 <body>
