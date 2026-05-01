@@ -17,14 +17,15 @@
         }
 
         /* Sekcja Hero z grafiką 4K */
-        .hero {
+    .hero {
     position: relative;
     width: 100%;
-    min-height: 100vh; /* Zapewnia wysokość na cały ekran */
+    /* Usuwamy min-height: 100vh, żeby strona mogła rosnąć wraz z tekstem */
     background-image: url('dc_Landing_Page.jpg');
-    background-size: cover; /* ROZWIĄZANIE: Rozciąga grafikę na całą szerokość i wysokość */
+    background-size: 100% auto; /* Grafika na całą szerokość, wysokość auto */
     background-repeat: no-repeat;
-    background-position: center top; /* Trzyma środek grafiki (logo) w centrum */
+    background-position: center top;
+    background-color: #f5f3f0; /* Tło pod grafiką, gdyby tekst był bardzo długi */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,20 +33,21 @@
  
         /* Kontener z tekstem - odwzorowanie Twoich linii z Photoshopa */
         
-        .text-container {
-    position: absolute;
-    top: 800px; /* Precyzyjne osadzenie od góry grafiki */
-    left: 50%;
-    transform: translateX(-50%); /* Idealne wycentrowanie w poziomie */
-    width: 60%; /* Szerokość środkowej sekcji */
+       .text-container {
+    /* Margines górny ustawia nam start tekstu dokładnie tam, gdzie chcesz */
+    margin-top: 800px; 
+    margin-bottom: 50px; /* Oddech na dole */
+    width: 60%; 
     max-width: 1200px;
-    padding: 30px;
-    background: #f5f3f0; /* Twój kolor, teraz bez przezroczystości, by zakryć grafikę */
+    padding: 40px;
+    /* Półprzezroczyste tło, żeby było widać "ducha" grafiki pod spodem, ale tekst był czytelny */
+    background: rgba(245, 243, 240, 0.9); 
     color: #1a1a1a;
     text-align: justify;
-    font-size: 1rem;
-    line-height: 1.6;
-    border-top: 4px solid #00ff00; /* Zielony akcent na styku z grafiką */
+    font-size: 1.1rem;
+    line-height: 1.7;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
         
 
