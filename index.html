@@ -31,20 +31,24 @@
 }
  
         /* Kontener z tekstem - odwzorowanie Twoich linii z Photoshopa */
+        
         .text-container {
-            position: absolute;
-            bottom: 5%; /* Dopasuj tę wartość, by "siedziała" idealnie na pasie */
-            width: 50%; /* Środkowa sekcja między Twoimi liniami pomocniczymi */
-            max-width: 1200px;
-            padding: 20px;
-            background: rgba(245, 243, 240, 0.85); /* Lekka przezroczystość Twojego koloru */
-            color: #1a1a1a;
-            text-align: justify;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            border: 1px solid #ccc;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
+    position: absolute;
+    top: 800px; /* Precyzyjne osadzenie od góry grafiki */
+    left: 50%;
+    transform: translateX(-50%); /* Idealne wycentrowanie w poziomie */
+    width: 60%; /* Szerokość środkowej sekcji */
+    max-width: 1200px;
+    padding: 30px;
+    background: #f5f3f0; /* Twój kolor, teraz bez przezroczystości, by zakryć grafikę */
+    color: #1a1a1a;
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.6;
+    border-top: 4px solid #00ff00; /* Zielony akcent na styku z grafiką */
+}
+        
+
 
         .bio-header {
             color: #000;
