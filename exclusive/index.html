@@ -17,7 +17,7 @@
             overflow-x: hidden;
         }
 
-        /* Sekcja Hero - Twoja oryginalna grafika tła */
+        /* Sekcja Hero */
         .hero {
             position: relative;
             width: 100%;
@@ -58,36 +58,34 @@
             width: fit-content;
         }
 
-        /* Sekcja Magnetofonu - TERAZ Z GRAFIKĄ KASETY */
+        /* Sekcja Magnetofonu - TERAZ TRANSPARENTNA */
         .player-zone {
             margin: 35px 0;
-            padding: 0; /* Usunięto padding, żeby grafika przylegała do krawędzi */
-            background: #111; 
-            border: 2px solid #333;
-            border-radius: 4px;
-            box-shadow: inset 0 0 20px rgba(0,0,0,1);
+            padding: 0;
+            background: transparent; /* Usunięto ciemne tło */
             text-align: center;
-            overflow: hidden; /* Żeby nic nie wystawało */
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
 
-        /* Grafika kasety wewnątrz playera */
         .cassette-web-img {
             width: 100%;
             height: auto;
             display: block;
             margin: 0;
+            border-radius: 8px 8px 0 0; /* Zaokrąglenie tylko góry */
         }
 
         .player-label {
             display: block;
-            color: #d40000;
+            color: #d40000; /* Pozostawiamy czerwony dla akcentu REC */
             font-family: 'Courier New', monospace;
             font-size: 0.8rem;
-            padding: 15px 0 10px 0;
+            padding: 0 0 15px 0;
             text-transform: uppercase;
             letter-spacing: 2px;
+            font-weight: bold;
             animation: blink 2s infinite;
         }
 
@@ -97,13 +95,16 @@
             100% { opacity: 1; }
         }
 
-        /* Standardowy player z Twoimi filtrami */
+        /* Standardowy player */
         audio {
             width: 100%;
-            height: 45px; /* Nieco wyższy dla lepszej obsługi */
-            filter: invert(90%) hue-rotate(180deg) brightness(1.2);
+            height: 40px;
+            /* Invert wyłączony lub zmieniony, by pasował do jasnego tła */
+            filter: brightness(0.95) contrast(1.1); 
             outline: none;
             display: block;
+            background: #eee; /* Delikatne tło samego paska dla widoczności */
+            border-radius: 0 0 8px 8px; /* Zaokrąglenie tylko dołu */
         }
 
         /* Ukrywanie przycisku pobierania */
@@ -113,10 +114,11 @@
 
         .tape-info {
             padding: 12px 0;
-            color: #777;
-            font-size: 0.65rem;
+            color: #555; /* Ciemniejszy kolor napisu na jasnym tle */
+            font-size: 0.7rem;
             font-family: monospace;
             letter-spacing: 1px;
+            font-weight: bold;
         }
 
         .quote {
@@ -172,11 +174,10 @@
             What you are hearing right now is my latest, unreleased work—a track that exists nowhere else. It remains hidden from the world until the 1st of May, 2030.
         </p>
 
-        <!-- SEKCJA MAGNETOFONU Z GRAFIKĄ I STANDARDOWYM PLAYEREM -->
+        <!-- SEKCJA MAGNETOFONU - CZYSTA I TRANSPARENTNA -->
         <div class="player-zone">
             <span class="player-label">● REC / EXCLUSIVE_PLAYBACK</span>
             
-            <!-- Grafika kasety nad playerem -->
             <img src="DC_Tascam_WEB.png" alt="Duty Cycle Tascam" class="cassette-web-img">
             
             <audio id="exclusiveAudio" controls autoplay controlsList="nodownload noplaybackrate">
@@ -200,7 +201,6 @@
 </div>
 
 <script>
-    // 1. Start audio po dowolnym kliknięciu (obejście blokad)
     document.body.addEventListener('click', function() {
         var audio = document.getElementById('exclusiveAudio');
         if (audio.paused) {
@@ -208,7 +208,6 @@
         }
     }, { once: true });
 
-    // 2. Blokada prawego kliknięcia na sekcji playera
     document.querySelector('.player-zone').addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
