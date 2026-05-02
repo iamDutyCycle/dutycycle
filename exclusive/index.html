@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duty Cycle | Exclusive Access</title>
+    <style>
+        /* Ustawienia globalne - spójne z Bio */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f5f3f0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
+        /* Kontener Exclusive */
+        .text-container {
+            width: 80%; 
+            max-width: 800px;
+            padding: 40px;
+            background: rgba(245, 243, 240, 0.95); 
+            color: #1a1a1a;
+            text-align: justify;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .exclusive-header {
+            color: #d40000; /* Czerwień dla podkreślenia statusu Exclusive */
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            display: block;
+            border-bottom: 2px solid #d40000;
+            width: fit-content;
+        }
+
+        /* Odtwarzacz Audio */
+        .player-zone {
+            margin: 40px 0;
+            padding: 30px;
+            background: #eee;
+            border-left: 5px solid #d40000;
+            text-align: center;
+        }
+
+        .player-label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        /* Przycisk powrotu */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 30px;
+            color: #666;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .text-container {
+                width: 90%;
+                padding: 25px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="text-container">
+        <span class="exclusive-header">[ IDENTITY_VERIFIED ]</span>
+        
+        <p>
+            If you are reading this, you are one of the few who possess the exclusive, hand-delivered <strong>Duty Cycle Cassette-Tape-Card</strong>. You’ve held the physical key; now, you’ve unlocked the sonic reality.
+        </p>
+
+        <p>
+            What you are hearing right now is my latest work—a track that exists nowhere else. It is hidden from the world, shielded from the digital masses until the <strong>1st of May, 2030</strong>. This is your private broadcast, brought to you exclusively.
+        </p>
+
+        <!-- Sekcja Audio -->
+        <div class="player-zone">
+            <span class="player-label">Now Streaming: Hidden Frequency</span>
+            <audio controls>
+                <source src="track.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <p style="font-style: italic; color: #444;">
+            Remember to check your personal portal periodically. The frequency will change, and new exclusive sounds will manifest here when you least expect them.
+        </p>
+
+        <p><strong>Enjoy and thanks for being there.</strong></p>
+
+        <!-- Link powrotny do Bio -->
+        <a href="../index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> RETURN TO PUBLIC PROFILE
+        </a>
+    </div>
+
+</body>
+</html>
