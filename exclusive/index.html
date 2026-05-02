@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duty Cycle | Exclusive Access</title>
     <style>
-        /* Ustawienia globalne - spójne z Bio */
         body, html {
             margin: 0;
             padding: 0;
@@ -19,7 +18,6 @@
             align-items: center;
         }
 
-        /* Kontener Exclusive */
         .text-container {
             width: 80%; 
             max-width: 800px;
@@ -31,99 +29,84 @@
             line-height: 1.7;
             border: 1px solid rgba(0,0,0,0.1);
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            position: relative;
         }
 
-        .exclusive-header {
-            color: #d40000; /* Czerwień dla podkreślenia statusu Exclusive */
+        /* Nagłówek identyczny jak w głównym index.html */
+        .bio-header {
+            color: #000;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             margin-bottom: 20px;
             display: block;
-            border-bottom: 2px solid #d40000;
+            border-bottom: 2px solid #1f1e1b;
             width: fit-content;
         }
 
-        /* Odtwarzacz Audio */
         .player-zone {
-            margin: 40px 0;
-            padding: 30px;
+            margin: 30px 0;
+            padding: 20px;
             background: #eee;
-            border-left: 5px solid #d40000;
-            text-align: center;
-        }
-
-        .player-label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
+            border-left: 4px solid #1f1e1b;
         }
 
         audio {
             width: 100%;
         }
 
-        /* Przycisk powrotu */
+        /* Styl cytatu - identyczny jak w sekcji Philosophy */
+        .quote {
+            font-style: italic; 
+            color: #444; 
+            border-left: 3px solid #1f1e1b; 
+            padding-left: 15px;
+            margin: 25px 0;
+        }
+
         .back-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-top: 30px;
+            margin-top: 20px;
             color: #666;
             text-decoration: none;
-            font-weight: 600;
             font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: #000;
+            font-weight: 600;
         }
 
         @media (max-width: 768px) {
-            .text-container {
-                width: 90%;
-                padding: 25px;
-                font-size: 1rem;
-            }
+            .text-container { width: 90%; padding: 25px; }
         }
     </style>
 </head>
 <body>
 
     <div class="text-container">
-        <span class="exclusive-header">[ IDENTITY_VERIFIED ]</span>
+        <span class="bio-header">Identity Verified.</span>
         
         <p>
-            If you are reading this, you are one of the few who possess the exclusive, hand-delivered <strong>Duty Cycle Cassette-Tape-Card</strong>. You’ve held the physical key; now, you’ve unlocked the sonic reality.
+            If you are reading this, you are one of the few who possess the exclusive, hand-delivered <strong>Duty Cycle Cassette-Tape-Card</strong>. You are holding the physical key—and now, you have unlocked the sonic reality.
         </p>
 
         <p>
-            What you are hearing right now is my latest work—a track that exists nowhere else. It is hidden from the world, shielded from the digital masses until the <strong>1st of May, 2030</strong>. This is your private broadcast, brought to you exclusively.
+            What you are hearing right now is my latest, unreleased work—a track that exists nowhere else. It remains hidden from the world, shielded from the digital masses until the <strong>1st of May, 2030</strong>.
         </p>
 
-        <!-- Sekcja Audio -->
         <div class="player-zone">
-            <span class="player-label">Now Streaming: Hidden Frequency</span>
             <audio controls>
                 <source src="track.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
 
-        <p style="font-style: italic; color: #444;">
-            Remember to check your personal portal periodically. The frequency will change, and new exclusive sounds will manifest here when you least expect them.
+        <p class="quote">
+            This is your private broadcast, brought to you ahead of time, and ahead of everyone else. Treat this card as your personal portal; keep it close and check back periodically. The frequency will change, and new exclusive sounds will manifest here when you least expect them.
         </p>
 
-        <p><strong>Enjoy and thanks for being there.</strong></p>
+        <p>Enjoy the journey. Thank you for being part of the inner circle.</p>
 
-        <!-- Link powrotny do Bio -->
         <a href="../index.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> RETURN TO PUBLIC PROFILE
+            <i class="fas fa-arrow-left"></i> BACK TO PROFILE
         </a>
     </div>
 
