@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta charset="UTF-8">
@@ -17,98 +17,34 @@
             overflow-x: hidden;
         }
 
+        /* Sekcja Hero - Twoja oryginalna grafika tła */
         .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            padding-top: 50px;
-        }
-
-        /* Kontener grafiki i playera */
-        .master-container {
-            width: 100%;
-            max-width: 1005px; /* Twoja szerokość bazowa */
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-            line-height: 0; /* Usuwa lukę pod obrazkiem */
-        }
-
-        .cassette-img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Custom Player */
-        .custom-player {
-            width: 100%;
-            height: 60px;
-            background-color: #cdb977; /* Kolor tła playera */
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-            box-sizing: border-box;
-            line-height: normal; /* Przywrócenie interlinii dla tekstu w playerze */
-        }
-
-        .play-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #453f38; /* Kolor przycisków */
-            font-size: 24px;
-            transition: transform 0.2s;
-        }
-
-        .play-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .progress-wrapper {
-            flex-grow: 1;
-            height: 6px;
-            background: rgba(69, 63, 56, 0.2);
-            margin: 0 20px;
-            cursor: pointer;
             position: relative;
-            border-radius: 3px;
+            width: 100%;
+            background-image: url('../dc_Landing_Page.jpg');
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-color: #f5f3f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .progress-fill {
-            width: 0%;
-            height: 100%;
-            background: #453f38; /* Kolor postępu */
-            border-radius: 3px;
-        }
-
-        .time-info {
-            font-family: 'Courier New', monospace;
-            color: #453f38;
-            font-size: 14px;
-            font-weight: bold;
-            min-width: 85px;
-        }
-
-        /* Kontener z tekstem pod spodem */
+        /* Kontener z tekstem */
         .text-container {
-            margin-top: 40px;
+            margin-top: 800px; 
             margin-bottom: 50px;
-            width: 90%;
-            max-width: 800px;
+            width: 60%; 
+            max-width: 1200px;
             padding: 40px;
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(245, 243, 240, 0.9); 
             color: #1a1a1a;
             text-align: justify;
             font-size: 1.1rem;
             line-height: 1.7;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
 
         .bio-header {
@@ -118,14 +54,75 @@
             letter-spacing: 2px;
             margin-bottom: 20px;
             display: block;
-            border-bottom: 2px solid #453f38;
+            border-bottom: 2px solid #d40000;
             width: fit-content;
         }
 
+        /* Sekcja Magnetofonu - TERAZ Z GRAFIKĄ KASETY */
+        .player-zone {
+            margin: 35px 0;
+            padding: 0; /* Usunięto padding, żeby grafika przylegała do krawędzi */
+            background: #111; 
+            border: 2px solid #333;
+            border-radius: 4px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,1);
+            text-align: center;
+            overflow: hidden; /* Żeby nic nie wystawało */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Grafika kasety wewnątrz playera */
+        .cassette-web-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0;
+        }
+
+        .player-label {
+            display: block;
+            color: #d40000;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            padding: 15px 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        /* Standardowy player z Twoimi filtrami */
+        audio {
+            width: 100%;
+            height: 45px; /* Nieco wyższy dla lepszej obsługi */
+            filter: invert(90%) hue-rotate(180deg) brightness(1.2);
+            outline: none;
+            display: block;
+        }
+
+        /* Ukrywanie przycisku pobierania */
+        audio::-webkit-media-controls-download-button { display: none; }
+        audio::-webkit-media-controls-enclosure { overflow: hidden; }
+        audio::-webkit-media-controls-panel { width: calc(100% + 33px); }
+
+        .tape-info {
+            padding: 12px 0;
+            color: #777;
+            font-size: 0.65rem;
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+
         .quote {
-            font-style: italic;
-            color: #444;
-            border-left: 3px solid #cdb977;
+            font-style: italic; 
+            color: #444; 
+            border-left: 3px solid #1f1e1b; 
             padding-left: 15px;
             margin: 25px 0;
         }
@@ -139,53 +136,59 @@
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 600;
+            border-top: 1px solid #ccc;
+            padding-top: 15px;
+            width: 100%;
         }
 
         .back-link:hover { color: #000; }
 
-        @media (max-width: 1005px) {
-            .master-container { width: 100%; }
-            .text-container { padding: 20px; font-size: 1rem; }
+        @media (max-width: 768px) {
+            .hero { background-size: 100% auto; }
+            .text-container {
+                margin-top: 65vw; 
+                width: 88%;
+                padding: 20px;
+                font-size: 0.9rem;
+                position: relative;
+                box-shadow: none;
+                border: none;
+                border-top: 2px solid #1f1e1b;
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="hero">
-    <!-- GŁÓWNA SEKCJA GRAFIKA + PLAYER -->
-    <div class="master-container">
-        <img src="DC_Tascam_WEB.png" alt="Duty Cycle Tascam" class="cassette-img">
-        
-        <div class="custom-player">
-            <button class="play-btn" id="mainPlayBtn">
-                <i class="fas fa-play" id="playIcon"></i>
-            </button>
-            
-            <div class="progress-wrapper" id="progressArea">
-                <div class="progress-fill" id="progressBar"></div>
-            </div>
-            
-            <div class="time-info" id="timeDisp">00:00</div>
-        </div>
-    </div>
-
-    <!-- Ukryty element audio -->
-    <audio id="exclusiveAudio">
-        <source src="Spektrastorm_-_Minimal_Animal_(Sonicstep_Recordings_2026).mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- TREŚĆ STRONY -->
     <div class="text-container">
         <span class="bio-header">Identity Verified.</span>
+        
         <p>
             If you are reading this, you are one of the few who possess the exclusive, hand-delivered <strong>Duty Cycle Cassette-Tape-Card</strong>. You are holding the physical key—and now, you have unlocked the sonic reality.
         </p>
+
         <p>
             What you are hearing right now is my latest, unreleased work—a track that exists nowhere else. It remains hidden from the world until the 1st of May, 2030.
         </p>
 
+        <!-- SEKCJA MAGNETOFONU Z GRAFIKĄ I STANDARDOWYM PLAYEREM -->
+        <div class="player-zone">
+            <span class="player-label">● REC / EXCLUSIVE_PLAYBACK</span>
+            
+            <!-- Grafika kasety nad playerem -->
+            <img src="DC_Tascam_WEB.png" alt="Duty Cycle Tascam" class="cassette-web-img">
+            
+            <audio id="exclusiveAudio" controls autoplay controlsList="nodownload noplaybackrate">
+                <source src="Spektrastorm_-_Minimal_Animal_(Sonicstep_Recordings_2026).mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            
+            <div class="tape-info">DUTY_CYCLE // TAPE_TYPE_II // CR02</div>
+        </div>
+
         <p class="quote">
-            This is your private broadcast. Treat this card as your personal portal; the frequency will change, and new exclusive sounds will manifest here when you least expect them.
+            This is your private broadcast, brought to you ahead of time, and ahead of everyone else. Treat this card as your personal portal; keep it close and check back periodically. The frequency will change, and new exclusive sounds will manifest here when you least expect them.
         </p>
 
         <p>Enjoy the journey. Thank you for being part of the inner circle.</p>
@@ -197,54 +200,18 @@
 </div>
 
 <script>
-    const audio = document.getElementById('exclusiveAudio');
-    const playBtn = document.getElementById('mainPlayBtn');
-    const playIcon = document.getElementById('playIcon');
-    const progressBar = document.getElementById('progressBar');
-    const progressArea = document.getElementById('progressArea');
-    const timeDisp = document.getElementById('timeDisp');
-
-    // Play/Pause Logic
-    playBtn.addEventListener('click', togglePlay);
-
-    function togglePlay() {
+    // 1. Start audio po dowolnym kliknięciu (obejście blokad)
+    document.body.addEventListener('click', function() {
+        var audio = document.getElementById('exclusiveAudio');
         if (audio.paused) {
             audio.play();
-            playIcon.classList.replace('fa-play', 'fa-pause');
-        } else {
-            audio.pause();
-            playIcon.classList.replace('fa-pause', 'fa-play');
-        }
-    }
-
-    // Aktualizacja paska postępu
-    audio.addEventListener('timeupdate', () => {
-        const percent = (audio.currentTime / audio.duration) * 100;
-        progressBar.style.width = percent + '%';
-        
-        let mins = Math.floor(audio.currentTime / 60);
-        let secs = Math.floor(audio.currentTime % 60);
-        if (secs < 10) secs = '0' + secs;
-        timeDisp.innerHTML = mins + ':' + secs;
-    });
-
-    // Kliknięcie w pasek (przewijanie)
-    progressArea.addEventListener('click', (e) => {
-        const width = progressArea.clientWidth;
-        const clickX = e.offsetX;
-        const duration = audio.duration;
-        audio.currentTime = (clickX / width) * duration;
-    });
-
-    // Autostart po pierwszym kliknięciu w dowolne miejsce (wymóg przeglądarek)
-    document.body.addEventListener('click', () => {
-        if (audio.paused && audio.currentTime === 0) {
-            togglePlay();
         }
     }, { once: true });
 
-    // Blokada zapisu
-    audio.addEventListener('contextmenu', e => e.preventDefault());
+    // 2. Blokada prawego kliknięcia na sekcji playera
+    document.querySelector('.player-zone').addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
 </script>
 
 </body>
