@@ -4,8 +4,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duty Cycle | Exclusive Access</title>
+    <title>Duty Cycle | Identity Verified</title>
     <style>
+        /* Ustawienia globalne - identyczne z Bio */
         body, html {
             margin: 0;
             padding: 0;
@@ -13,16 +14,31 @@
             height: 100%;
             background-color: #f5f3f0;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Sekcja Hero - odniesienie do grafiki w folderze wyżej */
+        .hero {
+            position: relative;
+            width: 100%;
+            background-image: url('../dc_Landing_Page.jpg');
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-color: #f5f3f0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
         }
 
+        /* Kontener z tekstem - pozycjonowanie identyczne z Bio */
         .text-container {
-            width: 80%; 
-            max-width: 800px;
+            margin-top: 800px; 
+            margin-bottom: 50px;
+            width: 60%; 
+            max-width: 1200px;
             padding: 40px;
-            background: rgba(245, 243, 240, 0.95); 
+            background: rgba(245, 243, 240, 0.9); 
             color: #1a1a1a;
             text-align: justify;
             font-size: 1.1rem;
@@ -31,7 +47,6 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
 
-        /* Nagłówek identyczny jak w głównym index.html */
         .bio-header {
             color: #000;
             font-weight: bold;
@@ -39,10 +54,11 @@
             letter-spacing: 2px;
             margin-bottom: 20px;
             display: block;
-            border-bottom: 2px solid #1f1e1b;
+            border-bottom: 2px solid #d40000; /* Czerwony akcent dla Exclusive */
             width: fit-content;
         }
 
+        /* Sekcja Odtwarzacza */
         .player-zone {
             margin: 30px 0;
             padding: 20px;
@@ -54,7 +70,7 @@
             width: 100%;
         }
 
-        /* Styl cytatu - identyczny jak w sekcji Philosophy */
+        /* Styl cytatu (Treat this card...) */
         .quote {
             font-style: italic; 
             color: #444; 
@@ -72,15 +88,39 @@
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 600;
+            border-top: 1px solid #ccc;
+            padding-top: 15px;
+            width: 100%;
         }
 
+        .back-link:hover {
+            color: #000;
+        }
+
+        /* Responsywność - identyczna z Bio */
         @media (max-width: 768px) {
-            .text-container { width: 90%; padding: 25px; }
+            .hero {
+                background-size: 100% auto; 
+                background-position: center top;
+            }
+
+            .text-container {
+                margin-top: 65vw; 
+                width: 88%;
+                padding: 20px;
+                font-size: 0.9rem;
+                line-height: 1.5;
+                position: relative;
+                box-shadow: none;
+                border: none;
+                border-top: 2px solid #1f1e1b;
+            }
         }
     </style>
 </head>
 <body>
 
+<div class="hero">
     <div class="text-container">
         <span class="bio-header">Identity Verified.</span>
         
@@ -89,9 +129,10 @@
         </p>
 
         <p>
-            What you are hearing right now is my latest, unreleased work—a track that exists nowhere else. It remains hidden from the world, shielded from the digital masses until the <strong>1st of May, 2030</strong>.
+            What you are hearing right now is my latest, unreleased work—a track that exists nowhere else. It remains hidden from the world, shielded from the digital masses until the 1st of May, 2030.
         </p>
 
+        <!-- Sekcja Audio -->
         <div class="player-zone">
             <audio controls>
                 <source src="track.mp3" type="audio/mpeg">
@@ -105,10 +146,12 @@
 
         <p>Enjoy the journey. Thank you for being part of the inner circle.</p>
 
+        <!-- Link powrotny -->
         <a href="../index.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> BACK TO PROFILE
+            <i class="fas fa-arrow-left"></i> RETURN TO PUBLIC PROFILE
         </a>
     </div>
+</div>
 
 </body>
 </html>
