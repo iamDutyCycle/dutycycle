@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duty Cycle | Electronic Music</title>
     <style>
-        /* --- STYLE WSPÓLNE --- */
+        /* Ustawienia globalne */
         body, html {
             margin: 0;
             padding: 0;
@@ -18,52 +19,43 @@
             scroll-behavior: smooth;
         }
 
-        .hero {
-            position: relative;
-            width: 100%;
-            background-image: url('dc_Landing_Page.jpg');
-            background-size: 100% auto;
-            background-repeat: no-repeat;
-            background-position: center top;
-            background-color: #f5f3f0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        /* Sekcja Hero z grafiką 4K */
+    .hero {
+    position: relative;
+    width: 100%;
+    background-image: url('dc_Landing_Page.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: #f5f3f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+        /* Kontener z tekstem */
+        
+       .text-container {
+    margin-top: 800px; 
+    margin-bottom: 50px;
+    width: 60%; 
+    max-width: 1200px;
+    padding: 40px;
+    background: rgba(245, 243, 240, 0.9); 
+    color: #1a1a1a;
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
 
-        .text-container {
-            margin-top: 800px; 
-            margin-bottom: 50px;
-            width: 60%; 
-            max-width: 1200px;
-            padding: 40px;
-            background: rgba(245, 243, 240, 0.9); 
-            color: #1a1a1a;
-            text-align: justify;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            border: 1px solid rgba(0,0,0,0.1);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-
-        h3 { border-bottom: 1px solid #ddd; padding-top: 10px; }
-        .bio-header {
-            color: #000;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            display: block;
-            border-bottom: 2px solid #d40000;
-            width: fit-content;
-        }
-
-        /* --- STYLE EXCLUSIVE (PLAYER) --- */
+        /* Style dla Exclusive Player */
         #exclusive-zone {
-            display: none; /* Domyślnie ukryte */
-            border-bottom: 2px dashed #d40000;
+            display: none;
             margin-bottom: 40px;
             padding-bottom: 20px;
+            border-bottom: 2px dashed #d40000;
         }
 
         .player-zone {
@@ -74,21 +66,21 @@
             align-items: center;
         }
 
-        .cassette-web-img { width: 100%; height: auto; border-radius: 8px 8px 0 0; }
+        .cassette-web-img { width: 100%; height: auto; display: block; border-radius: 8px 8px 0 0; }
         
         .player-label {
             display: block;
             color: #d40000;
             font-family: 'Courier New', monospace;
             font-size: 0.8rem;
-            padding-bottom: 15px;
+            padding: 0 0 15px 0;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: bold;
             animation: blink 2s infinite;
         }
 
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 
         audio {
             width: 100%;
@@ -103,143 +95,176 @@
             color: #555;
             font-size: 0.7rem;
             font-family: monospace;
+            letter-spacing: 1px;
             font-weight: bold;
         }
 
-        .quote {
-            font-style: italic; color: #444; border-left: 3px solid #1f1e1b;
-            padding-left: 15px; margin: 25px 0;
+        .bio-header-exclusive {
+            color: #000;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: block;
+            border-bottom: 2px solid #d40000;
+            width: fit-content;
         }
 
-        /* --- NAWIGACJA --- */
-        .nav-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #333;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .nav-links a:hover { color: #000; transform: translateY(-2px); }
+        /* Nav links style */
+    .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
 
-        /* --- MOBILE --- */
-        @media (max-width: 768px) {
-            .hero { background-size: 100% auto; }
-            .text-container {
-                margin-top: 60vw; 
-                width: 88%;
-                padding: 20px;
-                font-size: 0.9rem;
-                box-shadow: none;
-                border: none;
-                border-top: 2px solid #1f1e1b;
-            }
-        }
+.nav-links a:hover {
+    color: #000;
+    transform: translateY(-2px);
+}
+        
+@media (max-width: 768px) {
+    .hero { background-size: 100% auto; min-height: auto; }
+    .text-container {
+        margin-top: 60vw; 
+        width: 88%;
+        padding: 20px;
+        font-size: 0.9rem;
+        position: relative;
+        left: auto;
+        transform: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
     </style>
 </head>
 <body>
 
-<div class="hero">
+   <div class="hero">
     <div class="text-container">
-        
-        <!-- ================= SEKCJA EXCLUSIVE (UKRYTA) ================= -->
+
+        <!-- SEKCJA EXCLUSIVE (POKAZUJE SIĘ TYLKO Z #exclusive) -->
         <div id="exclusive-zone">
-            <span class="bio-header">Identity Verified.</span>
+            <span class="bio-header-exclusive">Identity Verified.</span>
             <p>
                 If you are reading this, you are one of the few who possess the exclusive, 
-                hand-delivered <strong>Duty Cycle Cassette-Tape-Card</strong>.
+                hand-delivered <strong>Duty Cycle Cassette-Tape-Card</strong>. 
+                You are holding the physical key - and now, you have unlocked the sonic reality.
+            </p>
+            <p>
+                What you are hearing right now is my latest, unreleased work - a track that exists nowhere else. 
+                It remains hidden from the world until the <strong>1st of May, 2030</strong>.
             </p>
 
             <div class="player-zone">
                 <span class="player-label">● REC / EXCLUSIVE_PLAYBACK</span>
                 <img src="DC_Tascam_WEB.png" alt="Duty Cycle Tascam" class="cassette-web-img">
-                <audio id="exclusiveAudio" controls controlsList="nodownload">
+                <audio id="exclusiveAudio" controls controlsList="nodownload noplaybackrate">
                     <source src="Spektrastorm_-_Minimal_Animal_(Sonicstep_Recordings_2026).mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
                 </audio>
                 <div class="tape-info">DUTY_CYCLE // MINIMAL ANIMAL // SSR011 // TAPE_TYPE_II //</div>
             </div>
 
-            <p class="quote">
-                This is your private broadcast. The frequency will change, and new exclusive sounds will manifest here when you least expect them.
+            <p style="font-style: italic; color: #444; border-left: 3px solid #1f1e1b; padding-left: 15px; margin: 25px 0;">
+                This is your private broadcast, brought to you ahead of time, and ahead of everyone else. Treat this card as your personal portal; keep it close and check back periodically. The frequency will change, and new exclusive sounds will manifest here when you least expect them.
             </p>
             <p>Enjoy the journey. Thank you for being part of the inner circle.</p>
-            
-            <!-- Przycisk powrotu do BIO (czyści hash) -->
-            <a href="#" onclick="window.location.hash=''; return false;" style="color: #666; font-size: 0.8rem; text-decoration: none; font-weight: bold;">
-                <i class="fas fa-arrow-left"></i> CLOSE EXCLUSIVE ZONE
-            </a>
+            <br>
         </div>
 
-        <!-- ================= SEKCJA PUBLIC BIO ================= -->
+        <!-- SEKCJA BIO (CO DO LITERY Z ORYGINAŁU) -->
         <div id="bio-zone">
-            <h3>Duty Cycle</h3>
+            <h3 style="border-bottom: 1px solid #ddd; padding-top: 10px;">Duty Cycle</h3>
             <p>
-                Hailing from Silesia, Poland, <strong>Duty Cycle</strong> (Max L. Patyk, b. 1982) is a composer 
-                and producer pioneering an eclectic fusion of tracker techniques, analog synthesis, 
-                and electric guitar...
-            </p>
-            
-            <h3>Artistic Journey</h3>
-            <p>The artist's roots trace back to the mid-90s...</p>
-            <p>In 2024, the consolidation of his work was announced under the moniker <strong>Duty Cycle</strong>...</p>
+    Hailing from Silesia, Poland, <strong>Duty Cycle</strong> (Max L. Patyk, b. 1982) is a composer 
+    and producer pioneering an eclectic fusion of tracker techniques, analog synthesis, 
+    and electric guitar. Through his independent label <strong>Sonistep Recordings</strong>, 
+    he explores the boundaries of contemporary electronic music...
+</p>
+            <h3 style="border-bottom: 1px solid #ddd; padding-top: 10px;">Artistic Journey</h3>
+        <p>
+            The artist's roots trace back to the mid-90s, when he began exploring the capabilities 
+            of Amiga and PC computers as a self-taught guitarist. It was his early encounter with 
+            the tracker culture that defined his unique approach to sound programming. For over 
+            two decades, the creator operated under numerous aliases, adapting his artistic identity 
+            to the specific genres he explored - ranging from techno to ambient.
+        </p>
+        <p>
+            In 2024, the consolidation of his work was announced under the moniker <strong>Duty Cycle</strong>. 
+            The project represents a synthesis of downtempo, IDM, deep house, and instrumental ambient. 
+            The sound of Duty Cycle is built upon the use of electric guitar, analog synthesizers, 
+            and advanced hardware sequencing. A vital element of his compositions involves original 
+            field recordings—whispers, static, and environmental textures that grant his raw 
+            electronics an organic, "breathing" quality.
+        </p>
 
-            <h3>Inspirations and Philosophy</h3>
-            <p>Duty Cycle’s work is deeply rooted in the aesthetics of cyberpunk literature...</p>
+        <h3 style="border-bottom: 1px solid #ddd; padding-top: 10px;">Inspirations and Philosophy</h3>
+        <p>
+            Duty Cycle’s work is deeply rooted in the aesthetics of cyberpunk literature 
+            (William Gibson, George Orwell) and iconic film scores (Vangelis, Angelo Badalamenti), 
+            lending his music an oneiric, often melancholic dimension. The artist avoids rigid 
+            genre boundaries, focusing instead on texture and sonic space.
+        </p>
 
-            <h3>The Philosophy</h3>
-            <p style="font-style: italic; color: #444; border-left: 3px solid #1f1e1b; padding-left: 15px;">
-                “The soul sings, the fingers play, the machine processes.”
-            </p>
+        <h3 style="border-bottom: 1px solid #ddd; padding-top: 10px;">Distribution and Audience Engagement</h3>
+        <p>
+            Duty Cycle is present on major streaming platforms, industry-specific services 
+            (including JunoDownload and SoundCloud), and social media. The creator actively 
+            promotes unconventional distribution methods, utilizing <strong>NFC technology</strong> 
+            to provide fans with unique musical content on physical media. His performances often 
+            take the form of mobile busking, where he utilizes modern software and controllers 
+            to create tracks on-the-fly in interaction with a spontaneous audience.
+        </p>
 
-            <div class="nav-links" style="margin-top: 30px; border-top: 2px solid #333; padding-top: 20px;">
-                <a href="https://www.junodownload.com/labels/Sonicstep+Recordings/" target="_blank"><i class="fas fa-download"></i></a>
-                <a href="https://instagram.com/iamdutycycle" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://soundcloud.com/sonicsteprecordings" target="_blank"><i class="fab fa-soundcloud"></i></a>
-                <!-- Link do aktywacji exclusive bez NFC (do testów) -->
-                <a href="#exclusive" style="color: #d40000; font-weight: bold; margin-left: 20px;">
-                    <i class="fas fa-id-badge"></i> [ UNLOCK ZONE ]
-                </a>
-            </div>
-        </div>
+        <h3 style="border-bottom: 1px solid #ddd; padding-top: 10px;">The Philosophy</h3>
+        <p style="font-style: italic; color: #444; border-left: 3px solid #1f1e1b; padding-left: 15px;">
+            “The soul sings, the fingers play, the machine processes.” This is music for those 
+            who seek the warmth of human memories and authentic emotions within cold, digital code.
+        </p>
 
-    </div>
+<div class="nav-links" style="margin-top: 30px; border-top: 2px solid #333; padding-top: 20px;">
+    <a href="https://www.junodownload.com/labels/Sonicstep+Recordings/" target="_blank"><i class="fas fa-download"></i>&nbsp;</a>
+    <a href="https://instagram.com/iamdutycycle" target="_blank"><i class="fab fa-instagram"></i>&nbsp;</a>
+    <a href="https://www.tiktok.com/@dutycycle" target="_blank"><i class="fab fa-tiktok"></i>&nbsp;</a>
+    <a href="https://soundcloud.com/sonicsteprecordings" target="_blank"><i class="fab fa-soundcloud"></i>&nbsp;</a>
+    <a href="#exclusive" style="color: #d40000; font-weight: bold;"><i class="fas fa-id-badge"></i> [ EXCLUSIVE_NFC_ZONE ]</a>
+</div>
+          </div>
+</div>
 </div>
 
 <script>
-    // FUNKCJA ZARZĄDZAJĄCA WIDOKAMI
     function handleRouting() {
         const isExclusive = window.location.hash === '#exclusive';
-        const exclusiveZone = document.getElementById('exclusive-zone');
+        const exZone = document.getElementById('exclusive-zone');
         const audio = document.getElementById('exclusiveAudio');
 
         if (isExclusive) {
-            exclusiveZone.style.display = 'block';
-            document.title = "Duty Cycle | Exclusive Zone";
-            // Przewiń do góry, żeby użytkownik widział player
+            exZone.style.display = 'block';
+            document.title = "Duty Cycle | Exclusive Session";
             window.scrollTo(0, 0);
         } else {
-            exclusiveZone.style.display = 'none';
-            document.title = "Duty Cycle | Bio";
-            if(audio) audio.pause(); // Zatrzymaj muzykę po wyjściu
+            exZone.style.display = 'none';
+            document.title = "Duty Cycle | Electronic Music";
+            if(audio) audio.pause();
         }
     }
 
-    // Nasłuchiwanie zmian w adresie
     window.addEventListener('hashchange', handleRouting);
     window.addEventListener('load', handleRouting);
 
-    // Obsługa autoplay po kliknięciu (wymóg przeglądarek)
     document.body.addEventListener('click', function() {
         if (window.location.hash === '#exclusive') {
             var audio = document.getElementById('exclusiveAudio');
-            if (audio && audio.paused) {
-                audio.play();
-            }
+            if (audio && audio.paused) audio.play();
         }
     }, { once: true });
 
-    // Blokada prawego przycisku na playerze (ochrona grafiki/linku)
     document.querySelector('.player-zone').addEventListener('contextmenu', e => e.preventDefault());
 </script>
 
